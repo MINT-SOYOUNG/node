@@ -11,10 +11,13 @@ iframe{width:390px;height:820px;border:0;background:#fff;display:block}
 <figure><figcaption>room detail</figcaption><iframe data-y="0" src="rooms/tide-penthouse.html"></iframe></figure>
 <script>
 document.querySelectorAll('iframe').forEach(function(f){
-  f.addEventListener('load', function(){
-    var y = parseInt(f.dataset.y,10);
-    setTimeout(function(){ try{ f.contentWindow.scrollTo(0,y); }catch(e){} }, 700);
-  });
+  var y = parseInt(f.dataset.y,10);
+  var tries = 0;
+  var iv = setInterval(function(){
+    tries++;
+    try { f.contentWindow.scrollTo(0, y); } catch(e) {}
+    if (tries > 12) clearInterval(iv);
+  }, 250);
 });
 </script>
 </body></html>

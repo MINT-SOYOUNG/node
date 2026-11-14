@@ -61,8 +61,10 @@
   --sand: #d7be8e;
   --off-white: #f3efe7;
 
-  --serif: "DM Serif Display", "Times New Roman", "Nanum Myeongjo", serif;
-  --display: "Zodiak", "DM Serif Display", "Nanum Myeongjo", serif;
+  --serif: "DM Serif Display", "Pretendard", "Apple SD Gothic Neo",
+    "Malgun Gothic", "Noto Sans KR", "Helvetica Neue", Arial, sans-serif;
+  --display: "Zodiak", "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic",
+    "Noto Sans KR", "Helvetica Neue", Arial, sans-serif;
   --sans: "Hedvig Letters Sans", "Pretendard", "Apple SD Gothic Neo",
     "Malgun Gothic", "Noto Sans KR", "Helvetica Neue", Arial, sans-serif;
 
@@ -158,6 +160,23 @@ ul.clean {
   font-size: clamp(19px, 1.55vw, 30px);
   line-height: 1.42;
   letter-spacing: -0.01em;
+}
+
+.h-lead {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(19px, 1.85vw, 35px);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+}
+
+.about-note {
+  margin-top: clamp(34px, 4.4vw, 84px);
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  gap: clamp(16px, 3vw, 60px);
+  align-items: start;
 }
 
 .eyebrow {
@@ -1336,6 +1355,7 @@ body.menu-open .nav {
 .link-mini {
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
   gap: 0.45em;
   margin-top: clamp(10px, 1vw, 18px);
   font-size: 0.86em;
@@ -1348,6 +1368,12 @@ body.menu-open .nav {
 .link-mini:hover {
   border-color: var(--gold);
   gap: 0.7em;
+}
+
+.link-mini svg {
+  width: 0.95em;
+  height: 0.95em;
+  flex: 0 0 auto;
 }
 
 /* FAQ */

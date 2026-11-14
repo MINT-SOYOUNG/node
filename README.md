@@ -27,7 +27,7 @@ assets/
   css/style.css      스타일 (디자인 토큰, 반응형, 애니메이션)
   js/main.js         내비게이션·메뉴 오버레이·스크롤 리빌·FAQ 아코디언
   fonts/             DM Serif Display, Zodiak, Hedvig Letters Sans (woff2)
-  img/               사이트 이미지 43종
+  img/               사이트 이미지 43종 (프레이머 원본 해상도, WebP q92)
   video/hero.mp4     홈 히어로 배경 영상
 ```
 

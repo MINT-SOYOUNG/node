@@ -857,6 +857,7 @@ body.menu-open .nav {
   font-size: clamp(15px, 1.5vw, 29px);
   line-height: 1.5;
   letter-spacing: -0.005em;
+  word-break: keep-all;
 }
 
 .t-author {

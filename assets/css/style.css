@@ -2121,6 +2121,22 @@ body.menu-open .nav {
     --nav-h: 68px;
   }
 
+  .intro-media {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-media figure {
+    height: clamp(230px, 74vw, 440px);
+  }
+
+  .cta-word {
+    font-size: clamp(34px, 12.5vw, 88px);
+  }
+
+  .testimonial {
+    min-height: 82vh;
+  }
+
   .nav-links {
     display: none;
   }

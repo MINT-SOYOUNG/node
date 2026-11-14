@@ -41,10 +41,12 @@ python3 -m http.server 8000
 
 ## 배포
 
-GitHub Pages, `main` 브랜치 루트를 그대로 게시합니다.
+GitHub Pages, `gh-pages` 브랜치 루트를 게시합니다.
 
 - 주소: https://mint-soyoung.github.io/node/
-- 설정: **Settings → Pages → Source: Deploy from a branch → Branch: `main`, Folder: `/ (root)`**
+- 현재 설정: **Settings → Pages → Source: Deploy from a branch → Branch: `gh-pages`, Folder: `/ (root)`**
+- 내용은 `main`과 동일합니다. 수정 사항을 반영하려면 `main`에 커밋한 뒤
+  `git push origin main:gh-pages` 로 배포 브랜치를 갱신하면 됩니다.
 
 ## 참고
 

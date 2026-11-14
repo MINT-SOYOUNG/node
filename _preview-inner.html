@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><title>mobile inner preview</title>
+<style>
+body{margin:0;background:#ddd;font-family:sans-serif;display:flex;gap:16px;padding:16px}
+figure{margin:0}
+figcaption{font-size:12px;margin-bottom:6px;color:#333}
+iframe{width:390px;height:820px;border:0;background:#fff;display:block}
+</style></head><body>
+<figure><figcaption>rooms</figcaption><iframe data-y="0" src="rooms.html"></iframe></figure>
+<figure><figcaption>hotel @700</figcaption><iframe data-y="700" src="hotel.html"></iframe></figure>
+<figure><figcaption>contact @700</figcaption><iframe data-y="700" src="contact.html"></iframe></figure>
+<figure><figcaption>room detail</figcaption><iframe data-y="0" src="rooms/tide-penthouse.html"></iframe></figure>
+<script>
+document.querySelectorAll('iframe').forEach(function(f){
+  f.addEventListener('load', function(){
+    var y = parseInt(f.dataset.y,10);
+    setTimeout(function(){ try{ f.contentWindow.scrollTo(0,y); }catch(e){} }, 700);
+  });
+});
+</script>
+</body></html>

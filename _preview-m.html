@@ -3,7 +3,26 @@
 .row{display:flex;gap:14px;padding:10px}
 figure{margin:0}figcaption{margin-bottom:4px}
 iframe{width:390px;height:800px;border:0;background:#fff}</style></head><body>
-<div class="row"><figure><figcaption>home-top</figcaption><iframe src="_m/home-top.html"></iframe></figure><figure><figcaption>home-intro</figcaption><iframe src="_m/home-intro.html"></iframe></figure><figure><figcaption>home-svc</figcaption><iframe src="_m/home-svc.html"></iframe></figure><figure><figcaption>home-quote</figcaption><iframe src="_m/home-quote.html"></iframe></figure></div>
-<div class="row"><figure><figcaption>home-rooms</figcaption><iframe src="_m/home-rooms.html"></iframe></figure><figure><figcaption>rooms-top</figcaption><iframe src="_m/rooms-top.html"></iframe></figure><figure><figcaption>rooms-list</figcaption><iframe src="_m/rooms-list.html"></iframe></figure><figure><figcaption>hotel-intro</figcaption><iframe src="_m/hotel-intro.html"></iframe></figure></div>
-<div class="row"><figure><figcaption>contact-form</figcaption><iframe src="_m/contact-form.html"></iframe></figure><figure><figcaption>rest-menu</figcaption><iframe src="_m/rest-menu.html"></iframe></figure><figure><figcaption>events</figcaption><iframe src="_m/events.html"></iframe></figure><figure><figcaption>services</figcaption><iframe src="_m/services.html"></iframe></figure></div>
-<div class="row"><figure><figcaption>room-detail</figcaption><iframe src="_m/room-detail.html"></iframe></figure><figure><figcaption>home-footer</figcaption><iframe src="_m/home-footer.html"></iframe></figure></div></body></html>
+<div class="row"><figure><figcaption>home-top</figcaption><iframe src="_m/home-top.html" data-y="0"></iframe></figure><figure><figcaption>home-intro</figcaption><iframe src="_m/home-intro.html" data-y="980"></iframe></figure><figure><figcaption>home-svc</figcaption><iframe src="_m/home-svc.html" data-y="2400"></iframe></figure><figure><figcaption>home-quote</figcaption><iframe src="_m/home-quote.html" data-y="3600"></iframe></figure></div>
+<div class="row"><figure><figcaption>home-rooms</figcaption><iframe src="_m/home-rooms.html" data-y="4300"></iframe></figure><figure><figcaption>rooms-top</figcaption><iframe src="_m/rooms-top.html" data-y="0"></iframe></figure><figure><figcaption>rooms-list</figcaption><iframe src="_m/rooms-list.html" data-y="760"></iframe></figure><figure><figcaption>hotel-intro</figcaption><iframe src="_m/hotel-intro.html" data-y="900"></iframe></figure></div>
+<div class="row"><figure><figcaption>contact-form</figcaption><iframe src="_m/contact-form.html" data-y="760"></iframe></figure><figure><figcaption>rest-menu</figcaption><iframe src="_m/rest-menu.html" data-y="1100"></iframe></figure><figure><figcaption>events</figcaption><iframe src="_m/events.html" data-y="700"></iframe></figure><figure><figcaption>services</figcaption><iframe src="_m/services.html" data-y="700"></iframe></figure></div>
+<div class="row"><figure><figcaption>room-detail</figcaption><iframe src="_m/room-detail.html" data-y="480"></iframe></figure><figure><figcaption>home-footer</figcaption><iframe src="_m/home-footer.html" data-y="4600"></iframe></figure></div><script>
+document.querySelectorAll('iframe').forEach(function(f){
+  var m = /(\d+)\.html$/.exec(f.getAttribute('src')) || [];
+  var f2 = f;
+  var y = 0;
+  var fig = f.closest('figure');
+  var cap = fig ? fig.querySelector('figcaption').textContent : '';
+  // map name -> y
+  var MAP = {homeint:980};
+  var n=0;
+  var iv=setInterval(function(){
+    try {
+      var doc=f.contentWindow.document;
+      var target = f.getAttribute('data-y');
+      if(target!==null) f.contentWindow.scrollTo(0, parseInt(target,10));
+    } catch(e){}
+    if(++n>18) clearInterval(iv);
+  },300);
+});
+</script></body></html>
